@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace TestApiExaminer.APIRequestTypes.RequestPOST
 {
     public class RequestPOST
@@ -15,13 +8,7 @@ namespace TestApiExaminer.APIRequestTypes.RequestPOST
         //public
         public async Task POST(string url, string TypeClassApi, string POST,object Data,string Key)
         {
-            //switch (Key)
-            //{
-            //    case "":
-
-
-            //    break;
-            //}
+          
             using (HttpClient httpClient = new HttpClient())
             {
                 // Устанавливаем заголовок Content-Type для указания типа данных JSON
@@ -38,9 +25,13 @@ namespace TestApiExaminer.APIRequestTypes.RequestPOST
 
                     // Считываем содержимое ответа
                     string responseContent = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine(responseContent);
+                    Debug.WriteLine(responseContent);
                 }
             }
         }
     }
-}
+}      //switch (Key)
+            //{
+            //    case "":
+            //    break;
+            //}

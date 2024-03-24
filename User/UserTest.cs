@@ -1,25 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TestApiExaminer.User
+﻿namespace TestApiExaminer.User
 {
-    public class UserTest
+    public class UserTest: StructureUser
     {
         string TypeClassApi { get; set; } = "Users/";
         public RequestGET RequestGet { get; set; }
         public int idUser { get; set; } = 5;
+
+         
         public UserTest(RequestGET requestGet)
         {
             RequestGet = requestGet;
 
         }
+
         public async Task GetUserAll(string url, string Getid)
         {
-
-         await   RequestGet.Get(url, TypeClassApi, Getid);
+          await   RequestGet.Get(url, TypeClassApi, Getid);
        
         }
 
@@ -30,9 +26,20 @@ namespace TestApiExaminer.User
 
         }
 
+        public async Task PostUser(string url, string Getid)
+        {
+            await RequestGet.Get(url, TypeClassApi, Getid );
 
+        }
+
+
+        public void RandomDateUser()
+        {
+            
+        }
     }
 }
+
 //using (HttpClient httpClient = new HttpClient())
 //{
 //    // Выполняем запрос GET

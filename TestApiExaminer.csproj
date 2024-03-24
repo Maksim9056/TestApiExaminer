@@ -17,4 +17,10 @@
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="ExamModels">
+      <HintPath>..\..\Examiner\ExamModels\bin\Debug\ExamModels.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

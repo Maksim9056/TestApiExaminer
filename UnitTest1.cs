@@ -1,19 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Net;
-using System.Net.Http;
-using System.Text;
-using TestApiExaminer.User;
-using static System.Reflection.Metadata.BlobBuilder;
-
-namespace TestApiExaminer
+﻿namespace TestApiExaminer
 {
     public class Tests
     {
         //string FillessS{ get; set; } = "C:\\Users\\Maks\\Pictures\\Screenshots\\Снимок экрана 2023-11-25 113905.png";
         string url = "https://localhost:7240/api/";
         public string User = "";
-
+        //Сколько пользователей сколько экзаменов и так далее
         public string Get = "GET";
         public string Getid = "GETId/";
         public string Post = "POST";
@@ -28,10 +20,12 @@ namespace TestApiExaminer
 
              await userTest.GetUserId(url, Getid);
 
-
+            //await userTest.PostUser(url, Post);
         }
 
     }
+   
+
 }
 
 //    MemoryStream memoryStream = new MemoryStream();

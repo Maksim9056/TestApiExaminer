@@ -1,2 +1,17 @@
 global using NUnit.Framework;
 global using TestApiExaminer.APIRequestTypes.RequestGET;
+global using Newtonsoft.Json;
+global using System;
+global using System.Net;
+global using System.Net.Http;
+global using System.Text;
+global using static System.Reflection.Metadata.BlobBuilder;
+global using TestApiExaminer.User;
+global using static TestApiExaminer.Tests;
+global using System.Security.Cryptography.X509Certificates;
+global using System.Diagnostics;
+global using System.Threading.Tasks;
+global using System.Collections.Generic;
+global using System.Linq;
+global using ExamModels;
+global using TestApiExaminer.Answer;
