@@ -15,14 +15,14 @@
 
         public async Task GetUserAll(string url, string Getid)
         {
-          await   RequestGet.Get(url, TypeClassApi, Getid);
-       
+            string Class    = await   RequestGet.Get(url, TypeClassApi, Getid);
+            
         }
 
 
         public async Task GetUserId(string url, string Getid)
         {
-            await RequestGet.Get(url, TypeClassApi, Getid+ idUser);
+            string Class = await RequestGet.Get(url, TypeClassApi, Getid+ idUser);
 
         }
 
@@ -35,7 +35,22 @@
 
         public void RandomDateUser()
         {
-            
+            // Генерация фальшивых данных для пользователей
+            var users = new Faker<ExamModels.User>()
+                .StrictMode(true)
+                .RuleFor(u => u.Id, f => f.IndexFaker)
+                .RuleFor(u => u.Name_Employee, f => f.Name.FirstName())
+                .RuleFor(u => u.Password, f => f.Internet.Password())
+                 .RuleFor(u => u.DataMess, f => f.Date.Past().ToString("F")) // Используем DateTime.Now
+                .Ignore(u => u.Id_roles_users) // Игнорирование Id_roles_users
+                .RuleFor(u => u.Employee_Mail, f => f.Internet.Email())
+                .Generate(10); // Генерация 10 пользователей
+
+        }
+
+        public async Task CheckUser(string url, string Getid, string email, string password)
+        {
+
         }
     }
 }

@@ -6,9 +6,18 @@ namespace TestApiExaminer.APIRequestTypes.RequestPOST
         private string jsonData;
 
         //public
-        public async Task POST(string url, string TypeClassApi, string POST,object Data,string Key)
+        public async Task<string> POST(string url, string TypeClassApi, string POST,object Data,string Key)
         {
-          
+            ExamModels.User user;
+            string str = "";
+            switch (Key)
+            {
+                case "User":
+                    user = (ExamModels.User)Data ;
+                    break;
+                
+            }
+            
             using (HttpClient httpClient = new HttpClient())
             {
                 // Устанавливаем заголовок Content-Type для указания типа данных JSON
@@ -28,6 +37,7 @@ namespace TestApiExaminer.APIRequestTypes.RequestPOST
                     Debug.WriteLine(responseContent);
                 }
             }
+            return str;
         }
     }
 }      //switch (Key)

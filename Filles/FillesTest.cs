@@ -1,6 +1,5 @@
 ﻿
-using TestApiExaminer.APIRequestTypes.RequestGET;
-using TestApiExaminer.Filles;
+using System.IO;
 
 namespace TestApiExaminer.Filles
 {
@@ -25,12 +24,30 @@ namespace TestApiExaminer.Filles
 
         public async Task PostFillesTest(string url, string Getid)
         {
+            var File =   ImageData();
+
+            var Filles = File.Result;
 
         }
 
+        public async Task<ExamModels.Filles> ImageData()
+        {
+            MemoryStream memoryStream = new MemoryStream();
+
+            FileStream fileStream = new FileStream("9725c85b78837dc18da13a93a400049edc8b49a72 (2)", FileMode.Open);
+            await fileStream.CopyToAsync(memoryStream);
+
+
+            ExamModels.Filles add = new ExamModels.Filles()
+            {
+                Name = memoryStream.ToArray(),
+            };
+            return add;
+
+        }
         public void RandomDateFillesTest()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

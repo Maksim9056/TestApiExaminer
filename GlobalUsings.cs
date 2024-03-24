@@ -14,4 +14,9 @@ global using System.Threading.Tasks;
 global using System.Collections.Generic;
 global using System.Linq;
 global using ExamModels;
+global using static ExamModels.User;
+global using static ExamModels.Tests;
+global using static ExamModels.Filles;
+
 global using TestApiExaminer.Answer;
+global using Bogus;

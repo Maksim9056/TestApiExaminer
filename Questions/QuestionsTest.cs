@@ -15,7 +15,7 @@ namespace TestApiExaminer.Questions
         public QuestionsTest(RequestGET requestGet)
         {
             RequestGet = requestGet;
-             bv
+             
         }
         public async Task GetQuestionsTestAll(string url, string Getid)
         {
@@ -24,12 +24,12 @@ namespace TestApiExaminer.Questions
 
         public async Task GetQuestionsTestId(string url, string Getid)
         {
-            throw new NotImplementedException();
+
         }
 
         public async Task PostQuestionsTest(string url, string Getid)
         {
-            throw new NotImplementedException();
+
         }
 
         public void RandomDateQuestionsTest()

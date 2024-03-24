@@ -1,11 +1,15 @@
 ﻿
 
+using System.Diagnostics.Metrics;
+using System.Reflection;
+
 namespace TestApiExaminer.APIRequestTypes.RequestGET
 {
     public class RequestGET
     {
-        public async Task Get(string url, string TypeClassApi, string Get)
+        public async Task<string> Get(string url, string TypeClassApi, string Get)
         {
+            string obj ="";
             using (HttpClient httpClient = new HttpClient())
             {
                 // Выполняем запрос GET
@@ -16,10 +20,12 @@ namespace TestApiExaminer.APIRequestTypes.RequestGET
 
                     // Считываем содержимое ответа
                     string responseContent = await response.Content.ReadAsStringAsync();
+                    obj = responseContent;
                     //Debug.WriteLine(responseContent);
                     Debug.WriteLine(responseContent);
                 }
             }
+            return obj;
         }
     }
 }
